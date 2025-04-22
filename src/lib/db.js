@@ -1,5 +1,5 @@
 import mysql from "mysql2/promise";
-import { env } from '$env/static/private';
+import { env } from '$env/dynamic/private';
 
 //let mysqlconn = null;
 
