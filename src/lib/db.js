@@ -1,7 +1,7 @@
 import mysql from "mysql2/promise";
 import { env } from '$env/static/private';
 
-l//et mysqlconn = null;
+//let mysqlconn = null;
 
 export function mysqlconnFn() {
 //   if (!mysqlconn) {
