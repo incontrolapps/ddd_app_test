@@ -9,7 +9,7 @@ export function mysqlconnFn() {
       host: env.AZURE_SQL_SERVER,
       user: env.AZURE_SQL_USER,
       password: env.AZURE_SQL_PASSWORD,
-      database: env.AZURE_SQL_DATABASE,
+      database: env.AZURE_SQL_DATABASE
     });
   }
 
