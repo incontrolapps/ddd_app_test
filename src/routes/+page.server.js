@@ -16,7 +16,7 @@ export async function load() {
   //     data: results,
   //   };
   try {
-    return mysqlconnFn
+    return {data:mysqlconnFn()}
   }
    catch (error) {
     console.error("Got an error!!!");
