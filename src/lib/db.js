@@ -3,10 +3,10 @@ import sql from 'mssql';
 import * as dotenv from 'dotenv';
 import { env } from '$env/dynamic/private';
 
-const server = process.env.AZURE_SQL_SERVER;
-const database = process.env.AZURE_SQL_DATABASE;
-const port = +process.env.AZURE_SQL_PORT;
-const type = process.env.AZURE_SQL_AUTHENTICATIONTYPE;
+const server = env.AZURE_SQL_SERVER;
+const database = env.AZURE_SQL_DATABASE;
+const port = +env.AZURE_SQL_PORT;
+const type = env.AZURE_SQL_AUTHENTICATIONTYPE;
 
 
 const noPasswordConfig = {
