@@ -25,14 +25,26 @@ let testQuery = `SELECT TimePeriod, Value FROM [dbo].[vw_LocalAuthorityMetricsEx
 WHERE ONSCode = 'FA001'
 AND MetricCode = 'FM001'`
 
-// export const myQuery = async () => {
+export const myQuery = async () => {
 
-//     var poolConnection = await sql.connect(noPasswordConfig);
-//     const result = await poolConnection.request().query(testQuery);
-//     poolConnection.close();
-//     return result;
-//   };
+    // var poolConnection = await sql.connect(noPasswordConfig);
+    // const result = await poolConnection.request().query(testQuery);
+    // poolConnection.close();
+    // return result;
 
-export let myQuery =  () => env;
+    try {
+        poolconnection = await sql.connect(noPasswordConfigconfig);
+
+        return poolconnection;
+      } catch (error) {
+        return {errorMsg:'Error connecting to the database:', detail: error};
+        this.connected = false;
+      }
+
+
+
+  };
+
+// export let myQuery =  () => env;
 
 /**/
