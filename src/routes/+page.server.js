@@ -5,7 +5,7 @@ export async function load() {
 	const response = await myQuery();
 
 	if (response) {
-		return response;
+		return {data: response};
 	}
 
 	return 'Not working';

@@ -6,7 +6,7 @@ let { data } = $props();
 </script>
 <h1>Testing a database connection</h1>
 
-{data}
+{JSON.stringify(data)}
 
 <style>
 button, p {
