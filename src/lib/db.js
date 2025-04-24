@@ -1,17 +1,34 @@
-import mysql from "mysql2/promise";
-import { env } from '$env/static/private';
 
-let mysqlconn = null;
+import sql from 'mssql';
+import * as dotenv from 'dotenv';
 
-export function mysqlconnFn() {
- if (!mysqlconn) {
- mysqlconn = mysql.createConnection({
-host: "sqls-sbx-lgpm-uks-001.database.windows.net",
-user: "CloudSA2846d83b",
-port: 1433,
-database: "sqldb-sbx-lgpm-uks-001"
-});
-}
 
-  return mysqlconn
-}
+const server = process.env.AZURE_SQL_SERVER;
+const database = process.env.AZURE_SQL_DATABASE;
+const port = +process.env.AZURE_SQL_PORT;
+const type = process.env.AZURE_SQL_AUTHENTICATIONTYPE;
+
+
+const noPasswordConfig = {
+  server,
+  port,
+  database,
+  authentication: {
+    type
+  },
+  options: {
+    encrypt: true
+  }
+};
+
+let testQuery = `SELECT TimePeriod, Value FROM [dbo].[vw_LocalAuthorityMetricsExportFull] 
+WHERE ONSCode = 'FA001'
+AND MetricCode = 'FM001'`
+
+export const myQuery = async () => {
+
+    var poolConnection = await sql.connect(noPasswordConfig);
+    const result = await poolConnection.request().query(testQuery);
+    poolConnection.close();
+    return `Result: ${JSON.stringify(result)}`;
+  };

@@ -1,22 +1,12 @@
-import { mysqlconnFn } from "$lib/db";
+import { myQuery } from "$lib/db";
+
 
 export async function load() {
+	const response = await myQuery();
 
-  let mysqlconn = await mysqlconnFn();
+	if (response) {
+		return response;
+	}
 
-  try {
-    let results = await mysqlconn
-      .query(   `SELECT TimePeriod, Value FROM [dbo].[vw_LocalAuthorityMetricsExportFull] 
-                WHERE ONSCode = 'FA001'
-                AND MetricCode = 'FM001'`)
-      .then(function ([rows, fields]) {
-        //        console.log(rows);
-        return rows;
-      })
-    }
-   catch (error) {
-    console.error("Got an error!!!");
-    console.log(error);
-    return error;
-  }
+	return 'Not working';
 }

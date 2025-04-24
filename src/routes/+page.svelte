@@ -1,16 +1,13 @@
 
 <script>
-export let data;
-console.log(data);
+
+let { data } = $props();
+
 </script>
 <h1>Testing a database connection</h1>
 
-{JSON.stringify(data)}
-<!-- 
-<p>Click state name to see data at bottom.</p>
-{#each data.data as state}
-    <button>{state.state}</button>
-{/each} -->
+{data}
+
 <style>
 button, p {
     padding: .5em .8em;
