@@ -35,7 +35,7 @@ export const myQuery = async () => {
     try {
         poolconnection = await sql.connect(noPasswordConfigconfig);
 
-        return poolconnection;
+        return {SUCCESS: "YEAH !", poolconnection: poolconnection};
       } catch (error) {
         return {errorMsg:'Error connecting to the database:', detail: error};
         this.connected = false;
