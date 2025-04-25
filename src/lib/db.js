@@ -34,8 +34,8 @@ export const myQuery = async () => {
 
     try {
         let poolConnection = await sql.connect(noPasswordConfig);
-        const result = await poolConnection.request().query(testQuery);
-        if(result) {console.log('Result:', result);}
+        //const result = await poolConnection.request().query(testQuery);
+        //if(result) {console.log('Result:', result);}
         poolConnection.close();
         return {SUCCESS: "YEAH !", poolConnection: JSON.parse(JSON.stringify(poolConnection))};
       } catch (error) {
