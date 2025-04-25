@@ -33,9 +33,9 @@ export const myQuery = async () => {
     // return result;
 
     try {
-        let poolconnection = await sql.connect(noPasswordConfig);
-
-        return {SUCCESS: "YEAH !", poolconnection: JSON.parse(JSON.stringify(poolconnection))};
+        let poolConnection = await sql.connect(noPasswordConfig);
+        const result = await poolConnection.request().query(testQuery);
+        return {SUCCESS: "YEAH !", poolConnection: JSON.parse(JSON.stringify(poolconnection)), result: JSON.parse(JSON.stringify(result))};
       } catch (error) {
         console.log('Error connecting to the database:', error);
         return {errorMsg:'Error connecting to the database:', detail: JSON.parse(JSON.stringify(error))};
