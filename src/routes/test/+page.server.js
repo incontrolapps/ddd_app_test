@@ -1,4 +1,4 @@
-// import { myQuery } from "$lib/db";
+ import { myQuery } from "$lib/db";
 // import { json } from '@sveltejs/kit';
 
 
