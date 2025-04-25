@@ -21,11 +21,11 @@ const noPasswordConfig = {
   }
 };
 
-let testQuery = `SELECT TimePeriod, Value FROM [dbo].[vw_LocalAuthorityMetricsExportFull] 
-WHERE ONSCode = 'FA001'
-AND MetricCode = 'FM001'`
+//let testQuery = `SELECT TimePeriod, Value FROM [dbo].[vw_LocalAuthorityMetricsExportFull] 
+//WHERE ONSCode = 'FA001'
+//AND MetricCode = 'FM001'`
 
-export const myQuery = async () => {
+export const myQuery = async (testQuery) => {
 
 
     try {

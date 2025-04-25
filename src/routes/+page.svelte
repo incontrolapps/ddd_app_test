@@ -29,3 +29,4 @@ SUCCESS?: <b>{data.SUCCESS}</b><br>
 QUERY: {data.QUERY}<br>
 RESULT: {JSON.stringify(data.RESULT)}<br>
 
+<a href="/test">Test again</a>
