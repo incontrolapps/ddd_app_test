@@ -17,7 +17,12 @@ export const actions = {
 		const sql = data.get('sql');
 		console.log('sql', sql);
 	//	const response = await myQuery(request.body);
+	const response = await myQuery(sql);
 
-	return { query: sql, success: true };
+	if (response) {
+		return {query:sql, success:false, response:response};
+	}
+
+	return { query: sql, success: false, response: {alas: 'Nope'} };
 	}
 };
