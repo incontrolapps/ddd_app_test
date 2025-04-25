@@ -5,21 +5,21 @@
     let { data } = $props()
 
     console.log(data)
-    
-    async function request(sql) {
-    const response = await fetch('/api', {
-        method: 'POST',
-        body: sql,
-        headers: {
-            'content-type': 'application/json'
-        }
-    });
 
-    let dbData = await response.json();
+    // async function request(sql) {
+    // const response = await fetch('/api', {
+    //     method: 'POST',
+    //     body: sql,
+    //     headers: {
+    //         'content-type': 'application/json'
+    //     }
+    // });
 
-    console.log(dbData)
-    }
-    request(`SELECT * FROM [dbo].[vw_LocalAuthorityMetricsExportFull] WHERE 1`)
+    // let dbData = await response.json();
+
+    // console.log(dbData)
+    // }
+    // request(`SELECT * FROM [dbo].[vw_LocalAuthorityMetricsExportFull] WHERE 1`)
 
 
 </script>
