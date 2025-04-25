@@ -33,7 +33,7 @@ export const myQuery = async () => {
     // return result;
 
     try {
-        poolconnection = await sql.connect(noPasswordConfigconfig);
+        poolconnection = await sql.connect(noPasswordConfig);
 
         return {SUCCESS: "YEAH !", poolconnection: JSON.parse(JSON.stringify(poolconnection))};
       } catch (error) {
