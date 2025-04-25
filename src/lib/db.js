@@ -25,7 +25,7 @@ let testQuery = `SELECT TimePeriod, Value FROM [dbo].[vw_LocalAuthorityMetricsEx
 WHERE ONSCode = 'FA001'
 AND MetricCode = 'FM001'`
 
-export const myQuery = async () => {
+export const myQuery = async ( testQuery ) => {
 
     // var poolConnection = await sql.connect(noPasswordConfig);
     // const result = await poolConnection.request().query(testQuery);
