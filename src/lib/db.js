@@ -36,17 +36,17 @@ export const myQuery = async () => {
         let poolConnection = await sql.connect(noPasswordConfig);
         //const result = await poolConnection.request().query(testQuery);
         //if(result) {console.log('Result:', result);}
-        console.log("Reading rows from the Table...");
+       // console.log("Reading rows from the Table...");
         var resultSet = await poolConnection.request().query(testQuery);
 
-        console.log(`${resultSet.recordset.length} rows returned.`);
+        // console.log(`${resultSet.recordset.length} rows returned.`);
 
         // output column headers
-        var columns = "";
-        for (var column in resultSet.recordset.columns) {
-            columns += column + ", ";
-        }
-        console.log("%s\t", columns.substring(0, columns.length - 2));
+        // var columns = "";
+        // for (var column in resultSet.recordset.columns) {
+        //     columns += column + ", ";
+        // }
+        // console.log("%s\t", columns.substring(0, columns.length - 2));
 
         // output row contents from default record set
         // resultSet.recordset.forEach(row => {
@@ -56,7 +56,7 @@ export const myQuery = async () => {
         // close connection only when we're certain application is finished
         poolConnection.close();
 
-        return {SUCCESS: "YEAH !", poolConnection: JSON.parse(JSON.stringify(poolConnection))};
+        return {SUCCESS: "YEAH !", RESULT: resultSet.recordset} //poolConnection: JSON.parse(JSON.stringify(poolConnection))};
       } catch (error) {
         console.log('Error connecting to the database:', error);
         return {errorMsg:'Error connecting to the database:', detail: JSON.parse(JSON.stringify(error))};
