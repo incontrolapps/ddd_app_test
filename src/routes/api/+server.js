@@ -6,7 +6,7 @@ export async function POST({ request }) {
     const response = await myQuery(request.body);
 
     if (response) {
-        return {response:response};
+        return response;
     }
 
     return {'Not working': 'Nope'};
