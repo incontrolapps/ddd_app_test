@@ -37,7 +37,7 @@ export const myQuery = async () => {
 
         return {SUCCESS: "YEAH !", poolconnection: JSON.parse(JSON.stringify(poolconnection))};
       } catch (error) {
-        return {errorMsg:'Error connecting to the database:', detail: JSON.parse(JSON.stringify(error))};
+        return {errorMsg:'Error connecting to the database:', detail: error};
         this.connected = false;
       }
 
