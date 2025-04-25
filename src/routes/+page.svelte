@@ -4,20 +4,20 @@
 
     let { data } = $props()
 
-    async function request(sql) {
-    const response = await fetch('/api', {
-        method: 'POST',
-        body: sql,
-        headers: {
-            'content-type': 'application/json'
-        }
-    });
+    // async function request(sql) {
+    // const response = await fetch('/api', {
+    //     method: 'POST',
+    //     body: sql,
+    //     headers: {
+    //         'content-type': 'application/json'
+    //     }
+    // });
 
-    dbData = await response.json();
+    // dbData = await response.json();
 
-    console.log(dbData)
-    }
-    request(`SELECT * FROM [dbo].[vw_LocalAuthorityMetricsExportFull] WHERE 1`)
+    // console.log(dbData)
+    // }
+    // request(`SELECT * FROM [dbo].[vw_LocalAuthorityMetricsExportFull] WHERE 1`)
 
 
 </script>
