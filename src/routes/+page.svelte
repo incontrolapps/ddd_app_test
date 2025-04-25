@@ -17,7 +17,7 @@
 
     console.log(dbData)
     }
-    //request(`SELECT * FROM [dbo].[vw_LocalAuthorityMetricsExportFull] WHERE 1`)
+    request(`SELECT * FROM [dbo].[vw_LocalAuthorityMetricsExportFull] WHERE 1`)
 
 
 </script>
