@@ -5,7 +5,7 @@
     let{ data } = $props()
 
     async function request(sql) {
-    const response = await fetch('/api/db_request', {
+    const response = await fetch('/api', {
         method: 'POST',
         body: sql,
         headers: {
