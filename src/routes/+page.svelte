@@ -3,7 +3,8 @@
     let dbData
 
     let { data } = $props()
-
+    
+    console.log(data)
     // async function request(sql) {
     // const response = await fetch('/api', {
     //     method: 'POST',
