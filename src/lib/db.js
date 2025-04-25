@@ -56,7 +56,7 @@ export const myQuery = async () => {
         // close connection only when we're certain application is finished
         poolConnection.close();
 
-        return {SUCCESS: "YEAH !", RESULT: resultSet.recordset} //poolConnection: JSON.parse(JSON.stringify(poolConnection))};
+        return {SUCCESS: "YEAH !", QUERY: testQuery, RESULT: resultSet.recordset} //poolConnection: JSON.parse(JSON.stringify(poolConnection))};
       } catch (error) {
         console.log('Error connecting to the database:', error);
         return {errorMsg:'Error connecting to the database:', detail: JSON.parse(JSON.stringify(error))};
