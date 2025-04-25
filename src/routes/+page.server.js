@@ -1,12 +1,11 @@
 import { myQuery } from "$lib/db";
-
+import { json } from '@sveltejs/kit';
 
 export async function load() {
 	const response = await myQuery();
-	const queryFunc = await myQuery;
 
 	if (response) {
-		return {response:response, qf:queryFunc};
+		return {response:response};
 	}
 
 	return {'Not working': 'Nope'};
