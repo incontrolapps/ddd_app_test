@@ -2,7 +2,7 @@
 <script>
     let dbData
 
-    let{ data } = $props()
+    let { data } = $props()
 
     async function request(sql) {
     const response = await fetch('/api', {
@@ -17,7 +17,7 @@
 
     console.log(dbData)
     }
-    request(`SELECT * FROM [dbo].[vw_LocalAuthorityMetricsExportFull] WHERE 1`)
+    //request(`SELECT * FROM [dbo].[vw_LocalAuthorityMetricsExportFull] WHERE 1`)
 
 
 </script>
