@@ -30,7 +30,3 @@ fetch("api/query", {
 
 }) 
 </script>
-
-{#if output}
-{JSON.stringify(output.response)}
-{/if}
