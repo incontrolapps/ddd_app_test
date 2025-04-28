@@ -1,7 +1,8 @@
 <script>
     import { page } from '$app/stores';
+	import { json } from '@sveltejs/kit';
     import { onMount } from 'svelte';
-
+    let output = null
     //http://localhost:5173/api?what=*&table=vw_LocalAuthorityMetricsExportFull&where=ONSCode%20=%20%27FA001%27%20AND%20MetricCode%20=%20%27FM001%27
 onMount(()=>{
     
@@ -30,3 +31,6 @@ fetch("api/query", {
 }) 
 </script>
 
+{#if output}
+{JSON.stringify(output)}
+{/if}
