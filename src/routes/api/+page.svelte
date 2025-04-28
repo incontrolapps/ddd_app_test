@@ -24,7 +24,7 @@ fetch("api/query", {
   }
 })
   .then((response) => response.json())
-  .then((json) => console.log("GOT A RESPONSE", json));
+  .then((json) => output = json);
 }
 
 
@@ -32,5 +32,5 @@ fetch("api/query", {
 </script>
 
 {#if output}
-{JSON.stringify(output)}
+{JSON.stringify(output.response)}
 {/if}
