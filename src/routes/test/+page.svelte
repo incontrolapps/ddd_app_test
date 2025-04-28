@@ -1,11 +1,11 @@
 <script>
-		let { form } = $props();
+	let { form } = $props();
 </script>
 
 <form method="POST">
 	<label>
 		SQL
-		<input name="sql" type="text">
+		<input name="sql" type="text" />
 	</label>
 
 	<button>Query</button>
@@ -16,15 +16,15 @@
 	       response to a form submission. it will vanish if the user reloads -->
 	<p>Successfully requested: {form.query}</p>
 	<p>With response: {JSON.stringify(form.response)}</p>
-	{#if form.response.SUCCESS=="YEAH !"}
-	<tbody>
-		{#each form.response.RESULT as row}
-<tr>
-			{#each Object.keys(row) as key}
-				<td>{row[key]}</td>
+	{#if form.response.SUCCESS == 'YEAH !'}
+		<tbody>
+			{#each form.response.RESULT as row}
+				<tr>
+					{#each Object.keys(row) as key}
+						<td>{row[key]}</td>
+					{/each}
+				</tr>
 			{/each}
-</tr>
-		{/each}
 		</tbody>
 	{/if}"
 {/if}

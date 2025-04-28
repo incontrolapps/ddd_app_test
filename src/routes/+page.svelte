@@ -1,32 +1,11 @@
-
 <script>
-
-
-    let { data } = $props()
-
-    console.log(data)
-
-    // async function request(sql) {
-    // const response = await fetch('/api', {
-    //     method: 'POST',
-    //     body: sql,
-    //     headers: {
-    //         'content-type': 'application/json'
-    //     }
-    // });
-
-    // let dbData = await response.json();
-
-    // console.log(dbData)
-    // }
-    // request(`SELECT * FROM [dbo].[vw_LocalAuthorityMetricsExportFull] WHERE 1`)
-
-
+	let { data } = $props();
 </script>
+
 <h1>Testing a database connection</h1>
-<br>
-SUCCESS?: <b>{data.SUCCESS}</b><br>
-QUERY: {data.QUERY}<br>
-RESULT: {JSON.stringify(data.RESULT)}<br>
+<br />
+SUCCESS?: <b>{data.SUCCESS}</b><br />
+QUERY: {data.QUERY}<br />
+RESULT: {JSON.stringify(data.RESULT)}<br />
 
 <a href="/test">Test again</a>

@@ -10,5 +10,5 @@ AND MetricCode = 'FM001'`);
 		return response;
 	}
 
-	return {'Not working': 'Nope'};
+	return { 'Not working': 'Nope' };
 }
