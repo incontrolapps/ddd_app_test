@@ -16,4 +16,15 @@
 	       response to a form submission. it will vanish if the user reloads -->
 	<p>Successfully requested: {form.query}</p>
 	<p>With response: {JSON.stringify(form.response)}</p>
+	{#if form.response.SUCCESS=="YEAH !"}
+	<tbody>
+		{#each form.response.RESULT as row}
+<tr>
+			{#each Object.keys(row) as key}
+				<td>{row[key]}</td>
+			{/each}
+</tr>
+		{/each}
+		</tbody>
+	{/if}"
 {/if}
